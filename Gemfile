@@ -9,6 +9,8 @@ gem 'rails', '~> 6.1.4'
 gem 'puma', '~> 5.0'
 
 gem 'aldous', '~> 1.1.3'
+
+gem 'easy_translate', '~> 0.5.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production

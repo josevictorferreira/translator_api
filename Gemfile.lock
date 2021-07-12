@@ -72,6 +72,9 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    easy_translate (0.5.1)
+      thread
+      thread_safe
     erubi (1.10.0)
     ffi (1.15.3)
     globalid (0.4.2)
@@ -158,6 +161,8 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     thor (1.1.0)
+    thread (0.2.2)
+    thread_safe (0.3.6)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     websocket-driver (0.7.5)
@@ -173,6 +178,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   dotenv-rails
+  easy_translate (~> 0.5.1)
   listen (~> 3.3)
   puma (~> 5.0)
   rails (~> 6.1.4)
