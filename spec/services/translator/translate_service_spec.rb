@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe Translator::TranslateService do
+describe Translator::TranslateService, :vcr do
   subject(:service) { described_class.new(text, target_language) }
 
   let(:api_key) { 'api123' }
@@ -15,6 +15,7 @@ describe Translator::TranslateService do
 
   context 'when success' do
     let(:expected_translation) { 'Olá Mundo!' }
+    let(:service_perform) { service.perform }
 
     before do
       allow(EasyTranslate).to receive(:translate).with(text, to: target_language).and_return(expected_translation)
@@ -22,8 +23,8 @@ describe Translator::TranslateService do
 
     it 'returns the expected translation' do
       expect(EasyTranslate).to receive(:translate).with(text, to: target_language).and_return(expected_translation)
-      expect(service.perform).to be_success
-      expect(service.perform.translation).to eq(expected_translation)
+      expect(service_perform).to be_a_success
+      expect(service_perform.translation).to eq(expected_translation)
     end
   end
 
